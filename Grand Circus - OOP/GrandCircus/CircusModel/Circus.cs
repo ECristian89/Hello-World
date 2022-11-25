@@ -5,25 +5,27 @@ namespace iQuest.GrandCircus.CircusModel
 {
     internal class Circus
     {
-        List<IAnimal> animals=new List<IAnimal>();
+        private readonly Arena _arena;
+        readonly List<IAnimal> animals=new List<IAnimal>
+        {
+            new Lion("Mufasa"),
+            new Bear("Baloo"),
+            new Snake("Ka"),
+            new Elephant("Admiral")
+        };
         public Circus(Arena arena)
         {
-            animals.Add(new Lion("Mufasa"));
-            animals.Add(new Bear("Baloo"));
-            animals.Add(new Snake("Ka"));
-            animals.Add(new Elephant("Admiral")); 
-            
+            _arena=arena;            
         }
 
         public void Perform()
         {
-            Arena arena=new Arena();
-            arena.PresentCircus("Olimpus '66");
+            _arena.PresentCircus("Olimpus '66");
 
             foreach (var animal in animals)
             {
-                arena.AnnounceAnimal(animal.GetName(), animal.GetSpecies());
-                arena.DisplayAnimalPerformance(animal.MakeSound());
+                _arena.AnnounceAnimal(animal.GetName(), animal.GetSpecies());
+                _arena.DisplayAnimalPerformance(animal.MakeSound());
             }
         }
     }

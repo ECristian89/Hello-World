@@ -4,25 +4,28 @@ using System.Text;
 
 namespace iQuest.GrandCircus.CircusModel
 {
-    internal class AnimalBase
+    internal abstract class AnimalBase : IAnimal
     {
-        private readonly string Name;
-        protected string SpeciesName;
+        private readonly string name;
+        private readonly string speciesName;
 
-        public AnimalBase(string name)
+        public AnimalBase(string name,string speciesName)
         {
-            Name = name;              
+            this.name = name;
+            this.speciesName = speciesName;
         }
         
 
         public string GetName()
         {
-            return Name;
+            return name;
         }
 
         public string GetSpecies()
         {
-            return SpeciesName;
-        }        
+            return speciesName;
+        }
+
+        public abstract string MakeSound();        
     }
 }

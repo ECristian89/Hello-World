@@ -4,14 +4,14 @@ using System.Text;
 
 namespace iQuest.GrandCircus.CircusModel
 {
-    internal class Elephant : AnimalBase, IAnimal
+    internal class Elephant : AnimalBase
     {
-        public Elephant(string name) : base(name)
+        public Elephant(string name) : base(name,"elephant")
         {
-            base.SpeciesName = "elephant";
+            
         }
 
-        public string MakeSound()
+        public override string MakeSound()
         {
             return "bahruuuuuuhhhhaaa";
         }
