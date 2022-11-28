@@ -8,7 +8,7 @@ namespace iQuest.GrandCircus.CircusModel
     {
         string MakeSound();
 
-        string GetName();
-        string GetSpecies();
+        string Name { get; }
+        string SpeciesName { get; }
     }
 }
