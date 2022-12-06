@@ -9,7 +9,7 @@ namespace iQuest.VendingMachine.UseCases
     {
         private readonly VendingMachineApplication application;
         private readonly MainDisplay mainDisplay;
-        private readonly ProductRepository repository;
+        private readonly ProductRepository repository= new ProductRepository();
         public string Name => "look";
 
         public string Description => "See the products list";
@@ -24,7 +24,12 @@ namespace iQuest.VendingMachine.UseCases
 
         public void Execute()
         {
-            throw new NotImplementedException();
+             var prodList = repository.GetAll();
+            Console.WriteLine("{0,-5} {1,-20} {2,8} {3,10}\n","Id","Product name","Price","Quantity");
+            foreach (var prod in prodList)
+            {
+                Console.WriteLine("{0,-5} {1,-20} {2,8:C} {3,10}",prod.ColumnId,prod.Name,prod.Price,prod.Quantity);
+            }
         }
     }
 }
