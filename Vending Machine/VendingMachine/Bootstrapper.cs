@@ -23,6 +23,7 @@ namespace iQuest.VendingMachine
             {
                 new LoginUseCase(vendingMachineApplication, mainDisplay),
                 new LogoutUseCase(vendingMachineApplication),
+                new LookUseCase(vendingMachineApplication, mainDisplay),
                 new TurnOffUseCase(vendingMachineApplication)
             });
 

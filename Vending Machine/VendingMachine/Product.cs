@@ -6,9 +6,17 @@ namespace iQuest.VendingMachine
 {
     internal class Product
     {
-        public int ColumnId { get; set; }
-        public string Name { get; set; }
-        public float Price { get; set; }
-        public int Quantity { get; set; }
+        public int ColumnId { get; }
+        public string Name { get; }
+        public float Price { get; }
+        public int Quantity { get; }
+
+        public Product(int id,string name,float price,int quantity)
+        {
+            ColumnId = id;
+            Name = name;
+            Price = price;
+            Quantity = quantity;
+        }
     }
 }
