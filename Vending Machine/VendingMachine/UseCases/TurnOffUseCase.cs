@@ -8,7 +8,7 @@
 
         public string Description => "Go to live your life.";
 
-        public bool CanExecute => application.UserIsLoggedIn;
+        public bool CanExecute => true;
 
         public TurnOffUseCase(VendingMachineApplication application)
         {

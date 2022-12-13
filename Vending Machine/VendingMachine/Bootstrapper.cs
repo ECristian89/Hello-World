@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using iQuest.VendingMachine.DataLayer;
 using iQuest.VendingMachine.PresentationLayer;
 using iQuest.VendingMachine.UseCases;
 
@@ -16,6 +17,8 @@ namespace iQuest.VendingMachine
         {
             MainDisplay mainDisplay = new MainDisplay();
             List<IUseCase> useCases = new List<IUseCase>();
+            ProductRepository productRepository = new ProductRepository();
+            ShelfView shelfView = new ShelfView();
 
             VendingMachineApplication vendingMachineApplication = new VendingMachineApplication(useCases, mainDisplay);
 
@@ -23,7 +26,8 @@ namespace iQuest.VendingMachine
             {
                 new LoginUseCase(vendingMachineApplication, mainDisplay),
                 new LogoutUseCase(vendingMachineApplication),
-                new LookUseCase(vendingMachineApplication, mainDisplay),
+                new LookUseCase(vendingMachineApplication, shelfView, productRepository),
+                new BuyUseCase(vendingMachineApplication, mainDisplay, productRepository),
                 new TurnOffUseCase(vendingMachineApplication)
             });
 

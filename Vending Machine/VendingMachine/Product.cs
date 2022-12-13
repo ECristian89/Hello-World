@@ -9,7 +9,7 @@ namespace iQuest.VendingMachine
         public int ColumnId { get; }
         public string Name { get; }
         public float Price { get; }
-        public int Quantity { get; }
+        public int Quantity { get; set; }
 
         public Product(int id,string name,float price,int quantity)
         {

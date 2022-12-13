@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
-namespace iQuest.VendingMachine
+namespace iQuest.VendingMachine.DataLayer
 {
     internal class ProductRepository
     {
@@ -21,6 +22,12 @@ namespace iQuest.VendingMachine
         public IEnumerable<Product> GetAll()
         {
             return Products;
+        }
+
+        public void SubtractProduct(Product prod)
+        {
+            var p = Products.FirstOrDefault(x => x.ColumnId == prod.ColumnId);
+            p.Quantity--;
         }
     }
 }

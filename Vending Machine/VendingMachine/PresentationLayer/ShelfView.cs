@@ -7,7 +7,7 @@ namespace iQuest.VendingMachine.PresentationLayer
 {
     internal class ShelfView
     {
-        public static void DisplayProducts(IEnumerable<Product> products)
+        public void DisplayProducts(IEnumerable<Product> products)
         {
             Console.BackgroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("{0,5}  {1,-15}  {2,-8}  {3,-10}", "Id", "Product name", "Price", "Quantity");
