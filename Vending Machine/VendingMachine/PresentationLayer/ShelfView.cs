@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
+using iQuest.VendingMachine.DataLayer;
 
 namespace iQuest.VendingMachine.PresentationLayer
 {

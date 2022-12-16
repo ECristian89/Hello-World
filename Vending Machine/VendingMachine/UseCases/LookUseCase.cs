@@ -3,7 +3,6 @@ using iQuest.VendingMachine.PresentationLayer;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using iQuest.VendingMachine.PresentationLayer;
 
 namespace iQuest.VendingMachine.UseCases
 {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace iQuest.VendingMachine
+namespace iQuest.VendingMachine.DataLayer
 {
     internal class Product
     {
@@ -11,7 +11,7 @@ namespace iQuest.VendingMachine
         public float Price { get; }
         public int Quantity { get; set; }
 
-        public Product(int id,string name,float price,int quantity)
+        public Product(int id, string name, float price, int quantity)
         {
             ColumnId = id;
             Name = name;

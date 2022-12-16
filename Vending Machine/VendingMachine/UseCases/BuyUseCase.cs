@@ -38,6 +38,17 @@ namespace iQuest.VendingMachine.UseCases
 
         void ValidateSelection()
         {
+            try
+            {
+
+            }
+            catch(IndexOutOfRangeException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+
+
             var prodList = repository.GetAll();
             int id = 1;
             string response = Console.ReadLine();
